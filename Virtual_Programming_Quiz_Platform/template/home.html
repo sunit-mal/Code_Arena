@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sharpener</title>
+    <link rel="stylesheet" href="{% static '/CSS/aos.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
+</head>
+
+<body class="body" id="body">
+    <nav class="navbar navbar-light bg-light fixed-top" id="nav">
+        <div class="container-fluid">
+            <a class="navbar-brand Pagetitle" href="/about/" id="heading">
+                <img src="{% static '/media/Logo.png' %}" alt="" style="height: 64px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Skill Sharpener</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/" style="color: aliceblue;">Home</a>
+                        </li>
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link login" href="{% url 'profile' name=request.user.username %}"
+                                style="color: aliceblue;">Profile</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link login" href="{% url 'profile' name='name' %}"
+                                style="color: aliceblue;">Profile</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link login" href="/Winnerboard/" style="color: aliceblue;">Winner</a>
+                        </li>
+                        <li class="nav-item dropdown">
+
+                            {% if request.user.is_authenticated %}
+
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" style="color: aliceblue;">
+                                {{user.get_username}}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" id="loginout" href="/logout/"
+                                        style="color: aliceblue;">Logout</a></li>
+                            </ul>
+
+                            {% else %}
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" style="color: aliceblue;">
+                                User
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+
+
+
+                                <li><a class="dropdown-item" id="loginbtn" href="/login/"
+                                        style="color: aliceblue;">Login</a></li>
+                                <li><a class="dropdown-item" id="signupbtn" href="/signup/"
+                                        style="color: aliceblue;">Sign Up</a></li>
+
+                                {% endif %}
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="bgimg">
+        <img src="{% static '/media/homepage.png' %}" alt="">
+        <div class="Start">
+            <a href="/home/" class="Start"><Button>Start learning</Button></a>
+        </div>
+        <video autoplay muted loop style="float: right;" data-aos="fade-left" data-aos-duration="1500">
+            <source src="{% static '/media/HomePage.mp4' %}" type="video/mp4">
+        </video>
+        <div class="text1">
+            <h3>Learn Coding Online Whenever You Want</h3>
+            <p>
+                The course is totally self-paced. You don't need to wait a few weeks or months for a group to form and
+                the course to begin. Just click on "Start learning" button, and dive into the fascinating world of
+                Programing!
+            </p>
+        </div>
+        <div class="img1" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/HomePage2.png' %}" alt="">
+        </div>
+        <div class="text2">
+            <h3>Practice Daily To Sharpe Your Skill</h3>
+            <p> Our virtual lab is your ticket to unlocking the secrets of the digital universe and creating your own
+                digital masterpieces! Get ready to embark on an epic coding adventure in our virtual lab, where we
+                transform lines of text into powerful tools that shape the digital world.</p>
+        </div>
+    </div>
+    <div class="myfooter">
+        <div class="contact">
+            <strong>Skill Sharpener</strong><br><br>
+            <i class="fa fa-user" style="font-size:24px">
+                <a href="https://www.linkedin.com/in/sunit-mal/" target="_blank">Sunit Mal</a>
+            </i><br>
+            <i class="fa fa-user" style="font-size:24px">
+                <a href="https://www.linkedin.com/in/samapon-ghosh-56219a253"  target="_blank">Samapon Ghosh</a>
+            </i><br>
+            <i class="fa fa-address-card-o" style="font-size:24px">
+                <a href="/about/" class="about">About Us</a>
+            </i><br>
+        </div>
+        <div class="copyright">
+            <p>Copyright &#169; Sunit Mal & Somapon Ghosh. All Right Reserve!</p>
+        </div>
+    </div>
+</body>
+
+<script src="{% static '/js_file/bootstrap.js' %}"></script>
+<script src="{% static '/js_file/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+<script src="{% static '/js_file/script.js' %}"></script>
+<script src="{% static '/js_file/BackToTab.js' %}"></script>
+
+</html>

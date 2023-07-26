@@ -1,0 +1,185 @@
+<!doctype html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <title>Sign Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static '/media/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'CSS/sign_up.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}" type="text/css">
+    <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
+</head>
+
+<body class="body" id="body">
+    <nav class="navbar navbar-light bg-light fixed-top" id="nav">
+        <div class="container-fluid">
+            <a class="navbar-brand Pagetitle" href="/about/" id="heading">
+                <img src="{% static '/media/Logo.png' %}" alt="" style="height: 64px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Skill Sharpener</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/" style="color: aliceblue;">Home</a>
+                        </li>
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link login" href="{% url 'profile' name=request.user.username %}" style="color: aliceblue;">Profile</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link login" href="{% url 'profile' name='name' %}" style="color: aliceblue;">Profile</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link login" href="/Winnerboard/" style="color: aliceblue;">Winner</a>
+                        </li>
+                        <li class="nav-item dropdown">
+
+                            {% if request.user.is_authenticated %}
+
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" style="color: aliceblue;">
+                                {{user.get_username}}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" id="loginout" href="/logout/" style="color: aliceblue;">Logout</a></li>
+                            </ul>
+
+                            {% else %}
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" style="color: aliceblue;">
+                                User
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+
+
+
+                                <li><a class="dropdown-item" id="loginbtn" href="/login/" style="color: aliceblue;">Login</a></li>
+                                <li><a class="dropdown-item" id="signupbtn" href="/signup/" style="color: aliceblue;">Sign Up</a></li>
+
+                                {% endif %}
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="pagebg">
+
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <div class="wrap d-md-flex">
+                            <div class="login-wrap p-4 p-md-5">
+                                <div class="data">
+                                    <!-- <h2>Sign up to </h2>
+                                    <h4 class="mb-3">Virtual Programming Quiz Platform</h4><br> -->
+                                    <form action="/signup/" class="signup-form" method="post" autocomplete="off">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group d-flex align-items-center">
+                                                    <label class="label" for="first name">First
+                                                        Name</label>
+                                                    <input type="text" class="form-control" placeholder="First Name"
+                                                        name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group d-flex align-items-center">
+                                                    <label class="label" for="last name">Last
+                                                        Name</label>
+                                                    <input type="text" class="form-control" placeholder="Last Name"
+                                                        name="lname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group d-flex align-items-center">
+                                                    <label class="label" for="email">Email Address</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="example@email.com" name="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group d-flex align-items-center">
+                                                    <label class="label"
+                                                        for="username">Username</label>
+                                                    <input type="text" class="form-control" placeholder="Username"
+                                                        name="uname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group d-flex align-items-center">
+                                                    <label class="label"
+                                                        for="phone">Password</label>
+                                                    <input type="password" class="form-control" placeholder="Password"
+                                                        name="pass1">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group d-flex align-items-center cp">
+                                                    <label class=" cp2" for="password">Confirm Password</label>
+                                                    <input type="password" class="form-control cp3"
+                                                        placeholder="Enter Password again" name="pass2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% if messages %}
+                                        {% for message in messages %}
+                                        <span class="alertmassage" style="font-size: 10px;color: red;">
+                                            {{message}}
+                                        </span>
+                                        {% endfor %}
+                                        {% else %}
+                                        <span class="alertmassage" style="font-size: 10px;color: red;">
+                                            &nbsp
+                                        </span>
+                                        {% endif %}
+                                </div>
+
+                                <div class="col-md-12 my-4">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="form-group footerGp">
+                                                <button type="submit" class="btn btn-secondary submit p-3">Create an
+                                                    account</button>
+                                                <a href="/login/" class="toLogin"
+                                                    style="position: relative;left: 10%;text-decoration: none;color:aliceblue;">Already
+                                                    a user? Login.</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="{% static '/js_file/bootstrap.js' %}"></script>
+<script src="{% static '/js_file/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+
+</html>
