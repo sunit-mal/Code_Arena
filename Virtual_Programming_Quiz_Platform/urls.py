@@ -4,8 +4,7 @@ from VirtualLab import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.home),
-    path('',views.index),
+    path('',views.home),
     path('teacherDasboard/',views.teacherDasboard,name='teacherDasboard'),
     path('post/',views.dashboard),
     path('about/',views.about,name='about'),
@@ -16,7 +15,6 @@ urlpatterns = [
     path('deletepost/<int:id>/', views.deletepost, name='deletepost'),
     path('response/<int:id>/', views.response, name='response'),
     path('winnerAdd/<int:id>/',views.winnerAdd,name='winnerAdd'),
-    path('winnerdelete/<int:id>/', views.winnerDelete, name='winnerdelete'),
     path('login/',views.user_login,name='userlogin'),
     path('signup/',views.uesr_signup,name='usersignup'),
     path('logout/', views.user_logout, name='userlogout'),
