@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo Bhai');
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
+.body,
+html {
+    background: #107694;
+    background-image: url('../media/bg.png');
+    /* background-image: url('../someimg/bg.png'); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-x: center;
+    /* height: 4500px; */
+}
+
+html {
+    overflow-x: hidden;
+}
+
+#nav {
+    background: #14539a !important;
+    /* background: radial-gradient(circle, rgba(122, 248, 248, 0.135) rgba(231, 152, 255, 0.144), 0) 100% !important; */
+    color: #ffffff !important;
+}
+
+.offcanvas-body {
+    background: #14539a !important;
+    /* background: radial-gradient(circle, rgba(95, 253, 255, 0.7569152661064426) 0%, rgba(222, 126, 251, 0.7905287114845938) 100%) !important; */
+    color: aliceblue !important;
+}
+
+.offcanvas-header {
+    background: #104582 !important;
+    /* background: radial-gradient(circle, rgba(95, 253, 255, 0.7569152661064426) 0%, rgba(222, 126, 251, 0.7905287114845938) 100%) !important; */
+    color: aliceblue !important;
+}
+
+li.nav-item {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: white !important;
+}
+
+.Pagetitle {
+    text-shadow: 0px 2px 5px rgb(0, 0, 0);
+    font-weight: bold;
+    color: aliceblue !important;
+    font-size: 26px !important;
+    font-family: 'Alkatra', cursive;
+}
+
+.navbar-toggler {
+    background-color: azure !important;
+}
+
+.pagebg {
+    position: relative;
+    top: 110px;
+    padding-left: 5%;
+    background: transparent;
+    width: 100%;
+}
+
+.secondMovieList {
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 2%;
+    display: inline-block;
+    margin-right: 12px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 270.22222222222223px;
+    height: 152px;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    transition: 4s;
+    display: flex;
+
+    background-image: url('../media/CodeBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.time{
+    font-size: 14px;
+}
+.secondMovieList:hover {
+    box-shadow: 1px 2px 10px antiquewhite;
+}
+.test {
+    text-shadow: 0px 2px 5px black;
+    font-family: monospace;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.test:hover {
+    transform: scale(0.5);
+    z-index: 2;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#page2 a {
+    text-decoration: none;
+}
+
+#page2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 600px) {
+
+    .body,
+    html {
+        /* background-image: url('../someimg/bg.png'); */
+        background-image: url('../media/bg.png');
+        background-repeat: no-repeat;
+        background-size: 180%;
+        background-position-x: right;
+        /* height: 4500px; */
+    }
+
+    .Pagetitle {
+        font-size: 20px !important;
+    }
+}
