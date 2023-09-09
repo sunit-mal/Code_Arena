@@ -118,8 +118,11 @@ def generate_excel(request, id):
         questionPaperName = ExamDetails.objects.get(id=data.questionId).Title
 
     # Create a response with the Excel file
-    response = HttpResponse(save_virtual_workbook(
-        workbook), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response = HttpResponse(
+        save_virtual_workbook(workbook),
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    )
     response['Content-Disposition'] = f'attachment; filename="{questionPaperName}.xlsx"'
 
-    return response
+
+return response
