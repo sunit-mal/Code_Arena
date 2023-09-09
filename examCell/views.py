@@ -7,8 +7,8 @@ from django.utils import timezone
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from .models import ExamDetails, ExamQuestions, Result
-# from openpyxl import Workbook
-# from openpyxl.writer.excel import save_virtual_workbook
+from openpyxl import Workbook
+from openpyxl.writer.excel import save_virtual_workbook
 
 
 def examInterface(request):
@@ -96,32 +96,31 @@ def showResultData(request, id):
 
 
 def generate_excel(request, id):
-    return HttpResponseRedirect("/")
-#     # Create a new workbook and add a worksheet
-#     workbook = Workbook()
-#     worksheet = workbook.active
+    # Create a new workbook and add a worksheet
+    workbook = Workbook()
+    worksheet = workbook.active
 
-#     # Add some sample data to the worksheet
-#     worksheet['A1'] = 'User Name'
-#     worksheet['B1'] = 'Submission Time'
-#     worksheet['C1'] = 'Right Answer'
-#     worksheet['D1'] = 'Percentage'
+    # Add some sample data to the worksheet
+    worksheet['A1'] = 'User Name'
+    worksheet['B1'] = 'Submission Time'
+    worksheet['C1'] = 'Right Answer'
+    worksheet['D1'] = 'Percentage'
 
-#     results = Result.objects.filter(questionId=id)
-#     i = 2
-#     questionPaperName = ''
-#     for data in results:
-#         worksheet[f'A{i}'] = data.uname
-#         worksheet[f'B{i}'] = str(data.time)
-#         worksheet[f'C{i}'] = data.rightAnswer
-#         worksheet[f'D{i}'] = f'{(data.rightAnswer/data.totalQuestion)*100}%'
-#         i = i+1
-#         questionPaperName = ExamDetails.objects.get(id=data.questionId).Title
+    results = Result.objects.filter(questionId=id)
+    i = 2
+    questionPaperName = ''
+    for data in results:
+        worksheet[f'A{i}'] = data.uname
+        worksheet[f'B{i}'] = str(data.time)
+        worksheet[f'C{i}'] = data.rightAnswer
+        worksheet[f'D{i}'] = f'{(data.rightAnswer/data.totalQuestion)*100}%'
+        i = i+1
+        questionPaperName = ExamDetails.objects.get(id=data.questionId).Title
 
-#     # Create a response with the Excel file
-#     response = HttpResponse(
-#         save_virtual_workbook(workbook),
-#         content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-#     )
-#     response['Content-Disposition'] = f'attachment; filename="{questionPaperName}.xlsx"'
-#     return response
+    # Create a response with the Excel file
+    response = HttpResponse(
+        save_virtual_workbook(workbook),
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    )
+    response['Content-Disposition'] = f'attachment; filename="{questionPaperName}.xlsx"'
+    return response
