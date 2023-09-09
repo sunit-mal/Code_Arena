@@ -298,7 +298,7 @@ def run_code(request, id):
                         f.write(code)
                 except IOError:
                     return HttpResponse('Error: Could not write to file.')
-            cmd = ['python', 'python/test.py']
+            cmd = ['python3', 'python/test.py']
             process = Popen(cmd, stdout=PIPE, stdin=PIPE, stderr=PIPE)
             output, error = process.communicate(input=code_input.encode())
             output = output.decode('utf-8')
@@ -453,7 +453,7 @@ def run_code(request, id):
                                 f.write(code)
                         except IOError:
                             return HttpResponse('Error: Could not write to file.')
-                    cmd = ['python', 'python/test.py']
+                    cmd = ['python3', 'python/test.py']
                     process = Popen(cmd, stdout=PIPE, stdin=PIPE, stderr=PIPE)
                     output, error = process.communicate(
                         input=code_input.encode())
