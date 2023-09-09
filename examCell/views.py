@@ -123,6 +123,4 @@ def generate_excel(request, id):
         content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     )
     response['Content-Disposition'] = f'attachment; filename="{questionPaperName}.xlsx"'
-
-
-return response
+    return response
