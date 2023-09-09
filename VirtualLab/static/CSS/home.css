@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
 
-.body{
+.body {
     background: #9669c4;
 }
-html{
+
+html {
     overflow-x: hidden;
 }
 
@@ -21,6 +22,7 @@ html{
     background: #104582 !important;
     color: aliceblue !important;
 }
+
 li.nav-item {
     font-size: 20px !important;
     font-weight: bold !important;
@@ -34,75 +36,96 @@ li.nav-item {
     font-size: 26px !important;
     font-family: 'Alkatra', cursive;
 }
-.navbar-toggler{
+
+.navbar-toggler {
     background-color: azure !important;
 }
-.bgimg img{
-    width: 100%;
+
+.pagebg {
+    position: relative;
+    top: 100px;
+    background: transparent;
 }
-.bgimg video{
+
+.bgimg img {
+    width: 100%;
+    /* background-image: url('../media/HomePage.png'); */
+}
+
+.bgimg video {
     width: 500px;
 }
-.text1{
+
+.text1 {
     width: 632px;
-    height:  300px;
+    height: 300px;
     margin: 30px;
     padding: 50px;
     margin-top: 150px;
     color: white;
 }
-.img1 img{
+
+.img1 img {
     width: 632px;
     float: left;
 }
-.text2{
+
+.text2 {
     width: 500px;
-    height:  300px;
+    height: 300px;
     margin: 20px;
     padding: 30px;
     margin-top: 150px;
     color: white;
     float: right;
 }
-.myfooter{
+
+.myfooter {
     background-color: #354a5f;
     width: 100%;
     display: flex;
     align-items: left;
 }
-.myfooter a{
+
+.myfooter a {
     text-decoration: none;
     color: aliceblue;
     font-size: 20px;
     padding-left: 10px;
 }
-.myfooter .contact{
+
+.myfooter .contact {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 100px;
     margin-right: 100px;
     color: aliceblue;
 }
-.myfooter .contact strong{
+
+.myfooter .contact strong {
     margin-bottom: 10px;
     font-size: 46px;
     font-family: cursive;
 }
-.myfooter .contact i{
-    margin:5px;
+
+.myfooter .contact i {
+    margin: 5px;
 }
-.myfooter .copyright{
+
+.myfooter .copyright {
     margin-top: 100px;
     color: aliceblue;
     font-size: 18px;
 }
-.Start{
+
+.Start {
     /* position: relative;
     top: -470px;
     left: 400px; */
     text-align: center;
 }
-.Start button{
+
+.Start button {
     width: 200px;
     height: 50px;
     border: none;

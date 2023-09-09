@@ -16,47 +16,51 @@
 
 <body class="body" id="body">
     {% include 'navbar.html' %}
-    <div class="bgimg">
-        <img src="{% static '/media/homepage.png' %}" alt="">
-        <div class="Start">
-            <a href="/home/" class="Start"><Button>Start learning</Button></a>
+    <div class="pagebg">
+        <div class="bgimg">
+            <img src="{% static '/media/homepage.png' %}" alt="">
+            <div class="Start">
+                <a href="/home/" class="Start"><Button>Start learning</Button></a>
+            </div>
+            <video autoplay muted loop style="float: right;" data-aos="fade-left" data-aos-duration="1500">
+                <source src="{% static '/media/HomePage.mp4' %}" type="video/mp4">
+            </video>
+            <div class="text1">
+                <h3>Learn Coding Online Whenever You Want</h3>
+                <p>
+                    The course is totally self-paced. You don't need to wait a few weeks or months for a group to form
+                    and
+                    the course to begin. Just click on "Start learning" button, and dive into the fascinating world of
+                    Programing!
+                </p>
+            </div>
+            <div class="img1" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <img src="{% static '/media/HomePage2.png' %}" alt="">
+            </div>
+            <div class="text2">
+                <h3>Practice Daily To Sharpe Your Skill</h3>
+                <p> Our virtual lab is your ticket to unlocking the secrets of the digital universe and creating your
+                    own
+                    digital masterpieces! Get ready to embark on an epic coding adventure in our virtual lab, where we
+                    transform lines of text into powerful tools that shape the digital world.</p>
+            </div>
         </div>
-        <video autoplay muted loop style="float: right;" data-aos="fade-left" data-aos-duration="1500">
-            <source src="{% static '/media/HomePage.mp4' %}" type="video/mp4">
-        </video>
-        <div class="text1">
-            <h3>Learn Coding Online Whenever You Want</h3>
-            <p>
-                The course is totally self-paced. You don't need to wait a few weeks or months for a group to form and
-                the course to begin. Just click on "Start learning" button, and dive into the fascinating world of
-                Programing!
-            </p>
-        </div>
-        <div class="img1" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-            <img src="{% static '/media/HomePage2.png' %}" alt="">
-        </div>
-        <div class="text2">
-            <h3>Practice Daily To Sharpe Your Skill</h3>
-            <p> Our virtual lab is your ticket to unlocking the secrets of the digital universe and creating your own
-                digital masterpieces! Get ready to embark on an epic coding adventure in our virtual lab, where we
-                transform lines of text into powerful tools that shape the digital world.</p>
-        </div>
-    </div>
-    <div class="myfooter">
-        <div class="contact">
-            <strong>Skill Sharpener</strong><br><br>
-            <i class="fa fa-user" style="font-size:24px">
-                <a href="https://www.linkedin.com/in/sunit-mal/" target="_blank">Sunit Mal</a>
-            </i><br>
-            <i class="fa fa-user" style="font-size:24px">
-                <a href="https://www.linkedin.com/in/samapon-ghosh-56219a253"  target="_blank">Samapon Ghosh</a>
-            </i><br>
-            <i class="fa fa-address-card-o" style="font-size:24px">
-                <a href="/about/" class="about">About Us</a>
-            </i><br>
-        </div>
-        <div class="copyright">
-            <p>Copyright &#169; Sunit Mal & Somapon Ghosh. All Right Reserve!</p>
+        <div class="myfooter">
+            <div class="contact">
+                <strong>Skill Sharpener</strong><br><br>
+                <i class="fa fa-user" style="font-size:24px">
+                    <a href="https://www.linkedin.com/in/sunit-mal/" target="_blank">Sunit Mal</a>
+                </i><br>
+                <i class="fa fa-user" style="font-size:24px">
+                    <a href="https://www.linkedin.com/in/samapon-ghosh-56219a253" target="_blank">Samapon Ghosh</a>
+                </i><br>
+                <i class="fa fa-address-card-o" style="font-size:24px">
+                    <a href="/about/" class="about">About Us</a>
+                </i><br>
+            </div>
+            <div class="copyright">
+                <p>Copyright &#169; Sunit Mal & Somapon Ghosh. All Right Reserve!</p>
+            </div>
         </div>
     </div>
 </body>
