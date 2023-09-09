@@ -7,8 +7,8 @@ from django.utils import timezone
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from .models import ExamDetails, ExamQuestions, Result
-from openpyxl import Workbook
-from openpyxl.writer.excel import save_virtual_workbook
+# from openpyxl import Workbook
+# from openpyxl.writer.excel import save_virtual_workbook
 
 
 def examInterface(request):
