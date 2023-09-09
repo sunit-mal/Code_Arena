@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from VirtualLab import views as VirtualLabViews
+from examCell import views as examCellViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,14 @@ urlpatterns = [
     path('addTest/<int:id>/',VirtualLabViews.addTest,name='addTest'),
     path('testCase/<int:id>/',VirtualLabViews.testCase,name='testCase'),
     
+    path('exam/',examCellViews.examInterface, name='examInterface'),
+    path('StartExam/<int:id>/',examCellViews.StartExam, name='StartExam'),
+    path('showResult/<int:id>/',examCellViews.showResult, name='showResult'),
+    path('examSet/',examCellViews.examEntry, name='examEntry'),
+    path('EntryNewQuestion/',examCellViews.newQuestionEntry, name='newQuestionEntry'),
+    path('DeleteQuestion/<int:id>/',examCellViews.DeleteQuestion, name='DeleteQuestion'),
+    path('QuestionEntry/<int:id>/',examCellViews.QuestionEntry, name='QuestionEntry'),
+    path('saveQuestion/<int:id>/',examCellViews.saveQuestion, name='saveQuestion'),
+    path('showResultData/<int:id>/',examCellViews.showResultData, name='showResultData'),
+    path('generate_excel/<int:id>/', examCellViews.generate_excel, name='generate_excel'),
 ]

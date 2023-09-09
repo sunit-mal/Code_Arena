@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Cell</title>
+    <link rel="stylesheet" href="{% static '/cssFile/exampage.css' %}">
+    <link rel="stylesheet" href="{% static '/cssFile/navbar.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}">
+    <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body class="body" id="body">
+    {% include 'navbar.html' %}
+    <div class="pagebg">
+        <div class="heading">
+            <h3>{{title}}</h3>
+        </div>
+
+        <button id="Start">Start Exam</button>
+        <button id="fullscreenBtn">Start Now</button>
+
+        <div id="questions">
+            <video id="videoElement" width="200" height="200" autoplay></video>
+
+            <form action="{% url 'showResult' id %}" method="post" id="questionsData">
+                {% csrf_token %}
+                <div class="FormItem code_title">
+                    {% for post in Questions %}
+                    <span> {{post.question}} : </span>
+                    <select name="{{post.id}}">
+                        <option value='null' selected>Not Visited</option>
+                        <option value="A">{{post.option1}}</option>
+                        <option value="B">{{post.option2}}</option>
+                        <option value="C">{{post.option3}}</option>
+                        <option value="D">{{post.option4}}</option>
+                    </select><br>
+                    {%endfor%}
+                </div>
+                <div class="FormItem btn_area">
+                    <button type="submit" id="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+
+</body>
+
+<script src="{% static '/js_file/bootstrap.js' %}"></script>
+<script src="{% static '/js_file/BackToTab.js' %}"></script>
+<script src="{% static '/jsFile/fullscreenMode.js' %}"></script>
+
+</html>

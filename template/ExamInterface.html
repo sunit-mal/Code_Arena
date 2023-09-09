@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Cell</title>
+    <link rel="stylesheet" href="{% static '/cssFile/examInterface.css' %}">
+    <link rel="stylesheet" href="{% static '/cssFile/navbar.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}">
+    <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body class="body" id="body">
+    {% include 'navbar.html' %}
+    <div class="pagebg">
+        <div class="heading">
+            <div class="Data">
+                <h3 style="width: 30%;">
+                    Welcome to
+                </h3>
+            </div>
+            <div class="Data">
+                <h3 style="width: 50%;">
+                    Skill Sharpener Exam Portal
+                </h3>
+            </div>
+        </div>
+        <div class="questionList">
+            <h4 style="width: 12rem;">Question List</h4>
+
+            {% for post in question %}
+            <div class="questions">
+                <span>{{post.Title}}</span>
+                <a href="{% url 'StartExam' post.id %}">Start</a><br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+<script src="{% static '/js_file/bootstrap.js' %}"></script>
+<script src="{% static '/js_file/BackToTab.js' %}"></script>
+</html>

@@ -1,0 +1,102 @@
+#questions{
+
+    display: none;
+}
+
+#fullscreenBtn{
+    display: none;
+}
+#body{
+    background-image: url('../Media/ExamPage.jpg') !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #b9e5e4;
+    font-family: 'Times New Roman', Times, serif;
+}
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 0px white;
+    font-weight: bold;
+}
+
+#Start{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #a8febfdd;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid #0000003a;
+    border-right: 2px solid #0000003a;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px white;
+}
+#fullscreenBtn{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #bc3356fe;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid #0000003a;
+    border-right: 2px solid #0000003a;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #232323cd;
+}
+
+#questionsData{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.code_title span{
+    background-color: #281d5cca;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+    border-radius: 20px;
+}
+.code_title select{
+    background-color: #95794e;
+    color: #ffffff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+    border-radius: 20px;
+}
+.FormItem{
+    margin: 10px;
+}
+
+#btn{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #0e058edd;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid #0000003a;
+    border-right: 2px solid #0000003a;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #000000; 
+}

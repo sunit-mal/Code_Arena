@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
+html{
+    overflow-x: hidden;
+}
+
+#nav {
+    background: #14539a !important;
+    color: #ffffff !important;
+}
+
+.offcanvas-body {
+    background: #14539a !important;
+    color: aliceblue !important;
+}
+
+.offcanvas-header {
+    background: #104582 !important;
+    color: aliceblue !important;
+}
+li.nav-item {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: white !important;
+}
+
+.Pagetitle {
+    text-shadow: 0px 2px 5px rgb(0, 0, 0);
+    font-weight: bold;
+    color: aliceblue !important;
+    font-size: 26px !important;
+    font-family: 'Alkatra', cursive;
+}
+.navbar-toggler{
+    background-color: azure !important;
+}
+
+.pagebg {
+    position: relative;
+    top: 110px;
+    padding-left: 5%;
+    width: 100%;
+}

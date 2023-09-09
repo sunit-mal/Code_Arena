@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Entry</title>
+    <link rel="stylesheet" href="{% static '/cssFile/navbar.css' %}">
+    <link rel="stylesheet" href="{% static '/cssFile/QuestionEntry.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}">
+    <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body class="body" id="body">
+    {% include 'navbar.html' %}
+    <div class="pagebg">
+        <h4>Enter Questions</h4>
+        <form action="{% url 'saveQuestion' questionId %}" method="post">
+            {% csrf_token %}
+            <div class="datablock">
+                <div class="block">
+                    <label for="title"> Question : </label>
+                    <textarea name="question" id="" cols="30" rows="10" required spellcheck="true"></textarea>
+                </div>
+                <div class="mcq">
+                    <div class="block">
+                        <label for="title"> Option A : </label><input type="text" name="A" id="" required>
+                    </div>
+                    <div class="block">
+                        <label for="title"> Option B : </label><input type="text" name="B" id="" required>
+                    </div>
+                    <div class="block">
+                        <label for="title"> Option C : </label><input type="text" name="C" id="" required>
+                    </div>
+                    <div class="block">
+                        <label for="title"> Option D : </label><input type="text" name="D" id="" required>
+                    </div>
+                    <div class="block">
+                        <label for="title"> Answer : </label><input type="text" name="Ans" id="" required
+                            placeholder="A or B or C or D">
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <button type="submit">Next</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="{% static '/js_file/bootstrap.js' %}"></script>
+<script src="{% static '/js_file/BackToTab.js' %}"></script>
+
+</html>

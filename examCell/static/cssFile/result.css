@@ -1,0 +1,48 @@
+body{
+    background-image: url('../Media/Result.jpg') !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.tableData{
+    background-color: aliceblue;
+    height: 22rem;
+    overflow-y: scroll;
+    font-family: 'Times New Roman', Times, serif;
+    width: 70%;
+    border:  none;
+    border-radius: 10px;
+    border-bottom: 2px solid #0000003a;
+    border-right: 2px solid #0000003a;
+    padding: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: black;
+    margin-right: 10px;
+    text-align: center;
+}
+#Excel{
+   
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #0e058edd;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid #0000003a;
+    border-right: 2px solid #0000003a;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #000000; 
+    margin-top: 10px;
+}
+
+.pagebg h4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+    text-shadow: 2px 2px 0px white, 0px 0px 4px aliceblue;
+}

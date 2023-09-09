@@ -1,0 +1,72 @@
+body{
+    background-image: url('../Media/QuestionEntry.jpg') !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.pagebg h4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+    text-shadow: 2px 2px 0px white, 0px 0px 4px aliceblue;
+}
+.block{
+    margin: 5px;
+}
+.block label{
+    width: 8rem;
+    background-color: #f0f8ffa9;
+    border:  none;
+    border-radius: 10px;
+    border-bottom: 2px solid #0000003a;
+    border-right: 2px solid #0000003a;
+    padding: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: black;
+    text-shadow: 2px 2px 0px white;
+    margin-right: 10px;
+    text-align: center;
+}
+.block textarea{
+    overflow: scroll;
+    width: 25rem;
+    height: 20rem;
+    border-radius: 10px;
+    resize: none;
+    outline: none !important;
+    padding: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.datablock{
+    display: flex;
+    justify-content: center;
+}
+
+.block input{
+    background-color: aliceblue;
+    border:  none;
+    border-radius: 10px;
+    border-bottom: 2px solid #0000003a;
+    border-right: 2px solid #0000003a;
+    padding: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: black;
+    outline: none !important;
+}
+.block button{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #0e058edd;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid #0000003a;
+    border-right: 2px solid #0000003a;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #000000; 
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Entry</title>
+    <link rel="stylesheet" href="{% static '/cssFile/navbar.css' %}">
+    <link rel="stylesheet" href="{% static '/cssFile/result.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}">
+    <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body class="body" id="body">
+    {% include 'navbar.html' %}
+    <div class="pagebg">
+        <h4>All Result</h4>
+        <div class="tableData">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Submission Time</th>
+                        <th scope="col">Total Right Answer</th>
+                        <th scope="col">Total Question</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in result %}
+                    <tr>
+                        <th scope="row"><a href="{% url 'ShowProfile' name=post.uname %}">
+                                {{post.uname}}</a></th>
+                        <td>{{post.time}}</td>
+                        <td>{{post.rightAnswer}}</td>
+                        <td>{{post.totalQuestion}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+        <a href="{% url 'generate_excel' id %}" download="sample.xlsx" id="Excel">Download Excel</a>
+    </div>
+</body>
+
+<script src="{% static '/js_file/bootstrap.js' %}"></script>
+<script src="{% static '/js_file/BackToTab.js' %}"></script>
+<script>
+
+</script>
+
+</html>

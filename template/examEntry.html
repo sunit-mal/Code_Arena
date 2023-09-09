@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Entry</title>
+    <link rel="stylesheet" href="{% static '/cssFile/navbar.css' %}">
+    <link rel="stylesheet" href="{% static '/cssFile/examEntry.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}">
+    <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body class="body" id="body">
+    {% include 'navbar.html' %}
+    <div class="pagebg">
+        <div class="alreadyPresentBlock">
+            <input class="form-check-input alreadyPresent" type="radio" name="test" id="alreadyPresent" value="option1">
+            <label class="form-check-label" for="exampleRadios1">
+                Present Questions
+            </label>
+            <div id="present">
+                {% for question in questions %}
+                <div class="block">
+                    <span>{{question.Title}}</span>
+                    <a href="{% url 'DeleteQuestion' question.id %}">Delete</a>
+                    <a href="{% url 'showResultData' question.id %}">Result</a>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        <div class="newCreateBlock">
+            <input class="form-check-input New" type="radio" name="test" id="New" value="option1">
+            <label class="form-check-label" for="exampleRadios1">
+                Enter New Question
+            </label>
+            <div id="startAdding">
+                <form action="/EntryNewQuestion/" method="post">
+                    {% csrf_token %}
+                    <label for="Title">Question Title : </label> <input type="text" name="title" id="" required>
+                    <button type="submit">Next</button>
+                    <button type="reset">Clear</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static '/js_file/bootstrap.js' %}"></script>
+<script src="{% static '/js_file/BackToTab.js' %}"></script>
+<script>
+    document.getElementById('New').addEventListener('change', function () {
+        if (this.checked) {
+            document.getElementById('startAdding').style.display = 'block';
+            document.getElementById('present').style.display = 'none';
+        } else {
+            document.getElementById('startAdding').style.display = 'none';
+            document.getElementById('present').style.display = 'block';
+        }
+    });
+    document.getElementById('alreadyPresent').addEventListener('change', function () {
+        if (this.checked) {
+            document.getElementById('startAdding').style.display = 'none';
+            document.getElementById('present').style.display = 'block';
+        } else {
+            document.getElementById('startAdding').style.display = 'block';
+            document.getElementById('present').style.display = 'none';
+        }
+    });
+
+</script>
+
+</html>
