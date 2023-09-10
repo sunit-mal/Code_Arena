@@ -7,6 +7,7 @@ compile user’s code and run it inan online terminal.
 The project can also use to check that theprogram
 working properly or not using test case, submitted
 by the user.
+
 • Tech Stack: Python, Django Backend, MVT Architecture,
 SQLite Database, HTML, CSS, JavaScript frontend
 
