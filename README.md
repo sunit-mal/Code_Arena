@@ -26,5 +26,5 @@ Download File then open Terminal
 # Start the Django development server
 `python manage.py runserver`
 
-#If any problem related static file
+# If any problem related static file
 `python manage.py collectstatic`
