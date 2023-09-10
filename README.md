@@ -13,7 +13,7 @@ SQLite Database(also mysql and mongodb can we use), HTML, CSS, JavaScript fronte
 
 # Installation Process:
 
-Download File then open Terminal 
+<!-- Download File then open Terminal  -->
 
 # Activate your virtual environment (if you're using one)
 `source <path_to_virtualenv>/bin/activate`
