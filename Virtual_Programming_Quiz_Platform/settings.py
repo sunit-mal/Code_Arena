@@ -64,12 +64,12 @@ WSGI_APPLICATION = 'Virtual_Programming_Quiz_Platform.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -81,6 +81,20 @@ DATABASES = {
 #         'PORT':'5592',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'VirtualLab',
+        
+        'CLIENT': {
+            'host': 'mongodb+srv://admin:sunit81@codearena.m0nbkpq.mongodb.net/?retryWrites=true&w=majority', 
+            'username': 'admin', 
+            'password': 'sunit81', 
+            'authSource': 'admin', 
+        },
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
