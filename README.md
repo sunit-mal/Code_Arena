@@ -1,5 +1,5 @@
 # Code_Arena
-Code Arena, provides the environment to execute program in particular language (i.e., C, C++,  PYTHON, JAVA). This web-based project has a built-in online compiler that allows user to compile user’s code and run it in an  online terminal.
+# Code Arena, provides the environment to execute program in particular language (i.e., C, C++,  PYTHON, JAVA). This web-based project has a built-in online compiler that allows user to compile user’s code and run it in an  online terminal.
 
 # Installation Process:
 
