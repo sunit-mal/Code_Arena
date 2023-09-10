@@ -1,5 +1,5 @@
 # Code_Arena
-<!-- • Code Arena, provides the environment to
+• Code Arena, provides the environment to
 execute program in particular language (i.e., C,
 C++, PYTHON, JAVA). This web-based project
 has a built-in online compiler that allows user to
@@ -9,7 +9,7 @@ working properly or not using test case, submitted
 by the user.
 
 • Tech Stack: Python, Django Backend, MVT Architecture,
-SQLite Database(also mysql and mongodb can we use), HTML, CSS, JavaScript frontend -->
+SQLite Database(also mysql and mongodb can we use), HTML, CSS, JavaScript frontend
 
 # Installation Process:
 
