@@ -13,7 +13,6 @@
     <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
 
 </head>
-
 <body class="body" id="body">
     {% include 'navbar.html' %}
     <div class="pagebg">
@@ -31,7 +30,7 @@
                 {% csrf_token %}
                 <div class="FormItem code_title">
                     {% for post in Questions %}
-                    <span> {{post.question}} : </span>
+                    <textarea name="" id="" cols="50" rows="8" disabled>{{post.question}}</textarea> 
                     <select name="{{post.id}}">
                         <option value='null' selected>Not Visited</option>
                         <option value="A">{{post.option1}}</option>

@@ -59,7 +59,7 @@
     font-size: 20px;
 }
 
-.code_title span{
+.code_title textarea{
     background-color: #281d5cca;
     color: white;
     padding-left: 1rem;
@@ -68,6 +68,7 @@
     padding-bottom: 5px;
     margin: 5px;
     border-radius: 20px;
+    resize: none;
 }
 .code_title select{
     background-color: #95794e;
@@ -78,6 +79,8 @@
     padding-bottom: 5px;
     margin: 5px;
     border-radius: 20px;
+    position: relative;
+    top: -5rem;
 }
 .FormItem{
     margin: 10px;
