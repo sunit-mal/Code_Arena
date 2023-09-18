@@ -87,4 +87,4 @@ Create a pull request with a clear description of your changes.
 - [Samapon Ghosh](https://github.com/samaponghosh)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
