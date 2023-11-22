@@ -217,6 +217,10 @@ def deletepost(request, id):
         postCode = codePost.objects.get(pk=id)
         win = winnerSave.objects.filter(Title=postCode.title)
         win.delete()
+        subData = sub_code.objects.filter(codeTitel=postCode.title)
+        subData.delete()
+        testCasesData = testCases.objects.filter(codeId=id)
+        testCasesData.delete()
         postCode.delete()
         return HttpResponseRedirect('/teacherDasboard/')
     else:
