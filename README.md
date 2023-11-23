@@ -1,6 +1,6 @@
 # Code_Arena
 
-![Project Logo/Image]
+![VirtualLab/static/media/Logo.png]
 
 ## Table of Contents
 - [Introduction](#introduction)
