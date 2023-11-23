@@ -184,16 +184,26 @@ def uesr_signup(request):
                     request, 'This username already exists. Please use a different one.')
                 return HttpResponseRedirect("/signup/")
             else:
-                myuser = User.objects.create_user(user, email, pass1)
-                myuser.first_name = fname
-                myuser.last_name = lname
-                myuser.save()
+                if(pass1.isalnum() and pass1.isalpha() == False and pass1.isdigit() == False and len(pass1) >= 8):
+                    if str(pass1).find(user) != -1:
+                        messages.success(
+                            request, 'Password should not contain username.')
+                        return HttpResponseRedirect("/signup/")
+                    else:
+                        myuser = User.objects.create_user(user, email, pass1)
+                        myuser.first_name = fname
+                        myuser.last_name = lname
+                        myuser.save()
 
-                # for login after signup
-                user = authenticate(request, username=user, password=pass1)
-                if user is not None:
-                    login(request, user)
-                    return HttpResponseRedirect('/home/')
+                        # for login after signup
+                        user = authenticate(request, username=user, password=pass1)
+                        if user is not None:
+                            login(request, user)
+                            return HttpResponseRedirect('/home/')
+                else:
+                    messages.success(
+                        request, 'Password should be alphanumeric and should contain atleast 8 characters.')
+                    return HttpResponseRedirect("/signup/")
 
         else:
             messages.success(

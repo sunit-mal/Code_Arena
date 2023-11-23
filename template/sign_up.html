@@ -6,11 +6,29 @@
     <title>Sign Up</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{% static '/media/logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'CSS/sign_up.css' %}">
     <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}" type="text/css">
     <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
+
+    
 </head>
+
+<style>
+    .password-overlay {
+        position: absolute; /* Position the overlay box within the form group */
+        left: 80%;
+        width: 200px;
+        background-color: #000000; /* Set background color of the overlay box */
+        padding: 5px;
+        border: none; /* Set border properties */
+        border-radius: 5px; /* Set border radius for rounded corners */
+        display: none; /* Hide the overlay initially */
+    }
+
+    .form-group:hover .password-overlay {
+        display: block; /* Show the overlay when the form group is hovered */
+    }
+</style>
 
 <body class="body" id="body">
     {% include 'navbar.html' %}
@@ -65,6 +83,11 @@
                                                         for="phone">Password</label>
                                                     <input type="password" class="form-control" placeholder="Password"
                                                         name="pass1">
+
+                                                    <div class="password-overlay">
+                                                        Password must contain at least 8 Alphanumeric characters.
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
