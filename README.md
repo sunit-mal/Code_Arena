@@ -1,6 +1,6 @@
 # Code_Arena
 
-![Project Logo/Image]
+![Picture2](https://github.com/sunit-mal/Code_Arena/assets/110469858/19ed188a-45a8-4d7a-b986-bdfbd24aabf5)
 
 ## Table of Contents
 - [Introduction](#introduction)
