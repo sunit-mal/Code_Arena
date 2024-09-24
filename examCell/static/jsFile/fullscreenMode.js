@@ -123,3 +123,20 @@ function showToast(message, duration = 3000) {
         }, 500);
     }, duration);
 }
+
+// Disable right-click menu
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+}, false);
+
+document.addEventListener('keydown', function (e) {
+
+    if (e.keyCode == 123) {
+        e.preventDefault();
+    }
+
+    if ((e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || // Ctrl+Shift+I or Ctrl+Shift+J
+        (e.ctrlKey && (e.keyCode == 85 || e.keyCode == 83))) { // Ctrl+U or Ctrl+S
+        e.preventDefault();
+    }
+}, false);
