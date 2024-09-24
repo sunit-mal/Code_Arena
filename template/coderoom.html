@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="{% static '/CSS/coderoom.css' %}">
     <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}">
     <link rel="shortcut icon" href="{% static '/media/fabicon.png' %}" type="image/x-icon">
-    
+
 </head>
+
 <body class="body" id="body">
     {% include 'navbar.html' %}
     <div class="pagebg" id="page2">
@@ -39,11 +40,12 @@
             </div>
         </div>
         <div class="row gx-5" tabindex="1">
-            <form action="{% url 'runcode' postData.id %}" method="post" class="container d-flex align-items-start align">
+            <form action="{% url 'runcode' postData.id %}" method="post"
+                class="container d-flex align-items-start align">
                 {% csrf_token %}
                 <div class="out-div p-3 d-inline-flex">
-                    <textarea name="codebox" id="input" cols="200" rows="50"
-                        placeholder="Compiler Workspace" spellcheck="false" autocomplete="false">{{value}}</textarea>
+                    <textarea name="codebox" id="input" cols="200" rows="50" placeholder="Compiler Workspace"
+                        spellcheck="false" autocomplete="false">{{value}}</textarea>
                 </div>
                 <div class="item">
                     <br><br>
@@ -52,6 +54,11 @@
                         <option value="Python">PYTHON</option>
                         <option value="Cpp">C/C++</option>
                     </select>
+                    {% if lang %}
+                    <script>
+                        document.querySelector('.option').value = "{{lang}}";
+                    </script>
+                    {%endif%}
                 </div>
                 <div class="out_area out-div d-flex align-items-start">
                     {% if messages %}
