@@ -38,4 +38,5 @@ urlpatterns = [
     path('saveQuestion/<int:id>/',examCellViews.saveQuestion, name='saveQuestion'),
     path('showResultData/<int:id>/',examCellViews.showResultData, name='showResultData'),
     path('generate_excel/<int:id>/', examCellViews.generate_excel, name='generate_excel'),
+    path('recognize-face/', examCellViews.recognize_face, name='recognize_face'),
 ]
