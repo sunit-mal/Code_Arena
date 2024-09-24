@@ -24,6 +24,7 @@ Code Arena is a web-based platform that provides an environment for executing pr
 - **Code Testing**: Validate the functionality of your code by running it against provided test cases.
 - **User Authentication**: Secure access with user authentication for tracking user activity.
 - **Exam Cell**: Organize and manage exams, check results, and download results as Excel files.
+- **Face Recognition**: During exam time student under AI base face recognition system.
 - **Tech Stack**: Built using Python, Django (Backend), HTML, CSS, and JavaScript (Frontend).
 - **Database Options**: Supports SQLite (also MySQL and MongoDB can be used) for data storage.
 - **Easy Installation**: Quick setup process for getting the project up and running.
@@ -72,6 +73,7 @@ View Results: Review the results of your code execution.
 Organize Exams: Teachers can organize and manage exams within the platform.
 Check Results: View and verify the results of exams conducted.
 Download Results: Download exam results as Excel files for further analysis.
+Face Recognition: During Exam period student are not allow try cheating. It has AI base Face Recognition system and also disable visiting inspect mode.
 
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow these guidelines:
