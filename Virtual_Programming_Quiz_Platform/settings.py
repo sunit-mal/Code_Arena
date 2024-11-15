@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v54e3g_vw9+*_3ua(gyu@2k+l8pljkh8ea4qr@u*e37_1xlkhk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -45,8 +45,8 @@ ROOT_URLCONF = 'Virtual_Programming_Quiz_Platform.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': os.path.join(BASE_DIR, 'template'),
-        'DIRS': [BASE_DIR,'template'],
+        'DIRS': os.path.join(BASE_DIR, 'template'),
+        # 'DIRS': [BASE_DIR,'template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
